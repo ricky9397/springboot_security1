@@ -8,7 +8,7 @@ DB 스키마 생성
 - use security;
 
 
-##스프링부트 gradle프로젝트 생성
+## 스프링부트 gradle프로젝트 생성
 - Spring Boot DevTools
 - Lombok
 - Spring Data JPA
@@ -18,7 +18,7 @@ DB 스키마 생성
 - Spring Web
 
 
-##application.yml 설정
+## application.yml 설정
 ```sh
 server:
   port: 8080
