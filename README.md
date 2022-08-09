@@ -17,7 +17,6 @@ DB 스키마 생성
 - Mustache
 - Spring Web
 
-
 ## application.yml 설정
 ```sh
 server:
@@ -48,3 +47,10 @@ spring:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     show-sql: true
 ```
+mustache view -> prefix, suffix 는 생략가능!
+
+## MustacheViewResolver
+![image](https://user-images.githubusercontent.com/84554175/183687342-5084401b-4e0f-456a-b078-9eb76d51a9d0.png)
+
+
+
