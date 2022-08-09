@@ -54,5 +54,6 @@ mustache view -> prefix, suffix 는 생략가능!
 - 소스경로 : https://github.com/ricky9397/springboot_security1/blob/master/src/main/java/com/ricky/security1/config/WebMvcConfig.java
 
 
-
+## SecurityConfig extends WebSecurityConfigurerAdapter 
+- 최신 버전은 WebSecurityConfigurerAdapter 가 먹히질 않기 때문에 버전을 낮추던가 버전에 맞는 extends를 해야한다. 구글참조.
 
