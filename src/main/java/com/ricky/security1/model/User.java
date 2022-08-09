@@ -9,8 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Timestamp;
 
-@Entity
 @Data
+@Entity
 public class User {
 
     @Id

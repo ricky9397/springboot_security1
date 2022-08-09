@@ -1,14 +1,21 @@
 package com.ricky.security1.controller;
 
+import com.ricky.security1.model.User;
+import com.ricky.security1.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
+@RequiredArgsConstructor
 public class IndexController {
 
+    private final UserRepository userRepository;
 
+    private final BCryptPasswordEncoder encoder;
     @GetMapping({"","/"})
     public String index(){
         // 머스테치 기본폴더 -> src/main/resources/
@@ -41,14 +48,28 @@ public class IndexController {
         return "joinForm";
     }
 
-    @GetMapping("/join")
-    public String join(){
-        return "join";
+    @PostMapping("/join")
+    @ResponseBody
+    public String join(User user){
+        System.out.println(user);
+        user.setRole("ROLE_USER");
+        String rawPw = user.getPassword();
+        String encPw = encoder.encode(rawPw);
+        user.setPassword(encPw);
+        userRepository.save(user);
+        return "redirect:/loginForm";
     }
 
-    @GetMapping("/joinProc")
-    public @ResponseBody String joinProc(){
-        return "회원가입 완료됨!";
+    @Secured("ROLE_ADMIN") // 권한 어너테이션(특정메소드에 어너테이션)
+    @GetMapping("/info")
+    public @ResponseBody String info(){
+        return "개인정보";
+    }
+
+   @PreAuthorize("hasRole('ROLE_MANAGER')") // 권한 어너테이션 2(특정메소드에 어너테이션)
+    @GetMapping("/data")
+    public @ResponseBody String data(){
+        return "데이터정보";
     }
 
 }
