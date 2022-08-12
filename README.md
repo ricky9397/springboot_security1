@@ -50,7 +50,7 @@ spring:
 mustache view -> prefix, suffix 는 생략가능!
 
 ## MustacheViewResolver
-![image](https://user-images.githubusercontent.com/84554175/184345680-ee7b11fe-dac7-4612-8226-9e4bc8c5d761.png)
+![image](https://user-images.githubusercontent.com/84554175/184345976-6949bb1b-7eea-4025-a96f-fde209b74b96.png)
 - 소스경로 : https://github.com/ricky9397/springboot_security1/blob/master/src/main/java/com/ricky/security1/config/WebMvcConfig.java
 
 
@@ -66,7 +66,7 @@ mustache view -> prefix, suffix 는 생략가능!
 
 - 톰켓과 같은 웹 애플리케이션을 서블릿 컨테이너라고 부르는데, 이런 웹 애플리케이션(J2EE Application)은 기본적으로 필터와 서블릿으로 구성되어 있습니다.
 
-![image](https://user-images.githubusercontent.com/84554175/184345771-3b5fc8e6-11b3-4447-88c0-37f35ec8a773.png)
+- 소스경로 : https://github.com/ricky9397/springboot_security1/blob/master/src/main/java/com/ricky/security1/config/WebMvcConfig.java
 
 - 필터는 체인처럼 엮여있기 때문에 필터 체인이라고도 불리는데, 모든 request 는 이 필터 체인을 반드시 거쳐야만 서블릿 서비스에 도착하게 됩니다.
 
@@ -74,7 +74,7 @@ mustache view -> prefix, suffix 는 생략가능!
 
 - 그래서 스프링 시큐리티는 DelegatingFilterProxy 라는 필터를 만들어 메인 필터체인에 끼워넣고, 그 아래 다시 SecurityFilterChain 그룹을 등록합니다.
 
-<img src="../images/fig-2-spring-big-picture.png" width="600" style="max-width:600px;width:100%;" />
+![image](https://user-images.githubusercontent.com/84554175/184345771-3b5fc8e6-11b3-4447-88c0-37f35ec8a773.png)
 
 - 이 필터체인은 반드시 한개 이상이고, url 패턴에 따라 적용되는 필터체인을 다르게 할 수 있습니다. 본래의 메인 필터를 반드시 통과해야만 서블릿에 들어갈 수 있는 단점을 보완하기 위해서 필터체인 Proxy 를 두었다고 할 수 있습니다.
 
@@ -84,7 +84,7 @@ mustache view -> prefix, suffix 는 생략가능!
 
 - 이 필터체인에는 다양한 필터들이 들어갑니다.
 
-<img src="../images/fig-4-filters.png" width="600" style="max-width:600px;width:100%;" />
+![image](https://user-images.githubusercontent.com/84554175/184345909-4fa52694-225b-4072-82d6-95c9b49c151a.png)
 
 - 각각의 필터는 단일 필터 단일 책임(?) 원칙 처럼, 각기 서로 다른 관심사를 해결합니다.. 예를 들면 아래와 같습니다.
   - _HeaderWriterFilter_ : Http 해더를 검사한다. 써야 할 건 잘 써있는지, 필요한 해더를 더해줘야 할 건 없는가?
