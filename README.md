@@ -50,7 +50,7 @@ spring:
 mustache view -> prefix, suffix 는 생략가능!
 
 ## MustacheViewResolver
-![image](https://user-images.githubusercontent.com/84554175/183687342-5084401b-4e0f-456a-b078-9eb76d51a9d0.png)
+![image](https://user-images.githubusercontent.com/84554175/184345680-ee7b11fe-dac7-4612-8226-9e4bc8c5d761.png)
 - 소스경로 : https://github.com/ricky9397/springboot_security1/blob/master/src/main/java/com/ricky/security1/config/WebMvcConfig.java
 
 
@@ -66,7 +66,7 @@ mustache view -> prefix, suffix 는 생략가능!
 
 - 톰켓과 같은 웹 애플리케이션을 서블릿 컨테이너라고 부르는데, 이런 웹 애플리케이션(J2EE Application)은 기본적으로 필터와 서블릿으로 구성되어 있습니다.
 
-<img src="../images/fig-1-servlet-container.png" width="600" style="max-width:600px;width:100%;" />
+![image](https://user-images.githubusercontent.com/84554175/184345771-3b5fc8e6-11b3-4447-88c0-37f35ec8a773.png)
 
 - 필터는 체인처럼 엮여있기 때문에 필터 체인이라고도 불리는데, 모든 request 는 이 필터 체인을 반드시 거쳐야만 서블릿 서비스에 도착하게 됩니다.
 
@@ -106,11 +106,5 @@ mustache view -> prefix, suffix 는 생략가능!
 - 필터는 넣거나 뺄 수 있고 순서를 조절할 수 있습니다. (이때 필터의 순서가 매우 critical 할 수 있기 때문에 기본 필터들은 그 순서가 어느정도 정해져 있습니다.)
 
 ---
-
-## 실습하기
-
-- 필터 설정하고 확인하기
-- 필터를 ignore 하기
-- 서로 다른 필터 체인을 타도록 하기
 
 
